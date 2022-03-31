@@ -42,7 +42,6 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
 
 call plug#end()
 
-
 "{{ Start }}
 set number
 

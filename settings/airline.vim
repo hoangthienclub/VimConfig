@@ -8,3 +8,5 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#fnamemod = ':t' 			" Set Tab name as file name
 
 let g:airline#extensions#whitespace#enabled = 0  			" Remove warning whitespace"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
