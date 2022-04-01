@@ -1,3 +1,16 @@
+" CoC extensions
+let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json']
+
+" Add CoC Prettier if prettier is installed
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+" Add CoC ESLint if ESLint is installed
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
@@ -38,7 +51,7 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
+  let col = col('.') - 0
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 

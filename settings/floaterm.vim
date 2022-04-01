@@ -31,13 +31,13 @@ tnoremap  	<F9> 		<C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
 
 " Navigation next and previous terminal 
 nnoremap  	<C-[> 		:FloatermNext<CR>
-tnoremap  	<C-[> 		<C-\><C-n>:FloatermNext<CR>
+"tnoremap  	<C-[> 		<C-\><C-n>:FloatermNext<CR>
 nnoremap  	<C-]> 		:FloatermPrev<CR>
-tnoremap  	<C-]> 		<C-\><C-n>:FloatermPrev<CR>
+"tnoremap  	<C-]> 		<C-\><C-n>:FloatermPrev<CR>
 
 " Toggle terminal
 nnoremap  	<F1> 		:FloatermToggle<CR>
-tnoremap  	<F1> 		<C-\><C-n>:FloatermToggle<CR>
+"tnoremap  	<F1> 		<C-\><C-n>:FloatermToggle<CR>
 
 " Focus terminal 
 "nnoremap <silent> 	<leader>tf 		<C-\><C-n><C-W><Left>

@@ -1,6 +1,6 @@
-call plug#begin('/Users/tranthien/.config/nvim/plugged') 
+call plug#begin('/Users/tranthien/.config/nvim/plugged')
 
-"{{ Theme }} 
+"{{ Theme }}
     Plug 'joshdick/onedark.vim'					" Theme
 
 "{{ File browser }}
@@ -27,10 +27,11 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
     Plug 'alvan/vim-closetag'
     Plug 'mattn/emmet-vim'
     Plug 'voldikss/vim-floaterm'
+    Plug 'tpope/vim-endwise'          " Autocomplete end after a do
 
 "{{ Code syntax highlight }}
     Plug 'yuezk/vim-js'
-    Plug 'MaxMEllon/vim-jsx-pretty'
+    Plug 'maxmellon/vim-jsx-pretty'
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'leafgarland/typescript-vim'
     Plug 'pangloss/vim-javascript'
@@ -44,14 +45,55 @@ call plug#end()
 
 "{{ Start }}
 set number
+set numberwidth=4
+set ruler
+set mouse=a
 
+" Indentation
+set autoindent
+set cindent
+set smartindent
+
+" Delete empty space from the end of lines on every save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Disable backups and swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+set ignorecase " Ignore case when searching
+set smartcase  " When searching try to be smart about cases
+set nohlsearch " Don't highlight search term
+set incsearch  " Jumping search
+
+set laststatus=2
+
+set clipboard=unnamed
+
+au BufRead,BufNewFile *.md setlocal spell
+au BufRead,BufNewFile *.md.erb setlocal spell
+au BufRead,BufNewFile *.feature setlocal spell
+
+set backspace=indent,eol,start
+
+" Faster saving and exiting
+nnoremap <silent><leader>w :w!<CR>
+nnoremap <silent><leader>q :q!<CR>
+nnoremap <silent><leader>x :x<CR>
+
+" Easier movement between split windows CTRL + {h, j, k, l}
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 """"""""""""""""""""""""""""""'
 " => Theme
 """""""""""""""""""""""""""""""
 " Color
 syntax on
 colorscheme onedark
-
+let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git -o -name .build \) -prune -o -print'
 
 " Extended settings
 let nvim_settings_dir = '/Users/tranthien/.config/nvim/settings/'
@@ -61,3 +103,25 @@ execute 'source'.nvim_settings_dir.'coc.vim'
 execute 'source'.nvim_settings_dir.'blamer.vim'
 execute 'source'.nvim_settings_dir.'airline.vim'
 execute 'source'.nvim_settings_dir.'floaterm.vim'
+execute 'source'.nvim_settings_dir.'vimjavascript.vim'
+execute 'source'.nvim_settings_dir.'typescriptvim.vim'
+
+" Define tab
+function! UseTabs()
+  set tabstop=4     " Size of a hard tabstop (ts).
+  set shiftwidth=4  " Size of an indentation (sw).
+  set noexpandtab   " Always uses tabs instead of space characters (noet).
+  set autoindent    " Copy indent from current line when starting a new line (ai).
+endfunction
+
+function! UseSpaces()
+  set tabstop=2     " Size of a hard tabstop (ts).
+  set shiftwidth=2  " Size of an indentation (sw).
+  set expandtab     " Always uses spaces instead of tab characters (et).
+  set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
+  set autoindent    " Copy indent from current line when starting a new line.
+  set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
+endfunction
+
+call UseTabs()
+call UseSpaces()
