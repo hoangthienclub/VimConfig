@@ -44,6 +44,7 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
 "{{ Code syntax highlight }}
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
+    Plug 'szw/vim-g'
 
 call plug#end()
 
@@ -129,3 +130,6 @@ endfunction
 
 call UseTabs()
 call UseSpaces()
+
+" Key map google vim
+"let g:vim_g_command = "google"
