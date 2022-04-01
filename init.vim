@@ -41,6 +41,10 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
 "{{ Code syntax highlight }}
     Plug 'APZelos/blamer.nvim'
 
+"{{ Code syntax highlight }}
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
+
 call plug#end()
 
 "{{ Start }}
