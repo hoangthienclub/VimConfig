@@ -45,7 +45,7 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
     Plug 'szw/vim-g'
-    Plug 'mickaobrien/vim-stackoverflow'
+    Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -106,7 +106,7 @@ execute 'source'.nvim_settings_dir.'airline.vim'
 execute 'source'.nvim_settings_dir.'floaterm.vim'
 execute 'source'.nvim_settings_dir.'vimjavascript.vim'
 execute 'source'.nvim_settings_dir.'typescriptvim.vim'
-
+execute 'source'.nvim_settings_dir.'git.vim'
 " Define tab
 function! UseTabs()
   set tabstop=4     " Size of a hard tabstop (ts).
@@ -127,5 +127,4 @@ endfunction
 call UseTabs()
 call UseSpaces()
 
-" Key map google vim
-"let g:vim_g_command = "google"
+

@@ -21,15 +21,15 @@ hi FloatermBorder guifg=Orange guibg=DarkGreen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hotkey to manage terminals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open a new terminal 
+" Open a new terminal
 nnoremap      <F8>    :FloatermNew<CR>
 tnoremap      <F8>    <C-\><C-n>:FloatermNew<CR>
 
-" Kill current terminal 
+" Kill current terminal
 nnoremap  	<F9> 		:FloatermKill<CR>:FloatermPrev<CR>
 tnoremap  	<F9> 		<C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
 
-" Navigation next and previous terminal 
+" Navigation next and previous terminal
 nnoremap  	<C-[> 		:FloatermNext<CR>
 "tnoremap  	<C-[> 		<C-\><C-n>:FloatermNext<CR>
 nnoremap  	<C-]> 		:FloatermPrev<CR>
@@ -37,15 +37,14 @@ nnoremap  	<C-]> 		:FloatermPrev<CR>
 
 " Toggle terminal
 nnoremap  	<F1> 		:FloatermToggle<CR>
-"tnoremap  	<F1> 		<C-\><C-n>:FloatermToggle<CR>
+tnoremap  	<F1> 		<C-\><C-n>:FloatermToggle<CR>
 
-" Focus terminal 
+" Focus terminal
 "nnoremap <silent> 	<leader>tf 		<C-\><C-n><C-W><Left>
 "tnoremap <silent> 	<leader>tf 		<C-\><C-n><C-W><Left>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hotkey to run other console apps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Git 
+" Git
 "nnoremap   <F8>    :FloatermNew --position=bottomleft --height=0.8 --width=0.6 --title='Git' lazygit<CR>
