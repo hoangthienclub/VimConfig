@@ -45,6 +45,7 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
     Plug 'szw/vim-g'
+    Plug 'mickaobrien/vim-stackoverflow'
 
 call plug#end()
 
@@ -81,11 +82,6 @@ au BufRead,BufNewFile *.md.erb setlocal spell
 au BufRead,BufNewFile *.feature setlocal spell
 
 set backspace=indent,eol,start
-
-" Faster saving and exiting
-nnoremap <silent><leader>w :w!<CR>
-nnoremap <silent><leader>q :q!<CR>
-nnoremap <silent><leader>x :x<CR>
 
 " Easier movement between split windows CTRL + {h, j, k, l}
 nnoremap <c-h> <c-w>h

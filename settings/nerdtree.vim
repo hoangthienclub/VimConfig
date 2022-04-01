@@ -1,7 +1,7 @@
-" C-T to toggle 
+" C-T to toggle
 au VimEnter *  NERDTree
 map <C-T> :NERDTreeToggle<CR>
-map <C-R> :NERDTreeRefreshRoot<CR>
+map <R> :NERDTreeRefreshRoot<CR>
 " Open the existing NERDTree on each new tab.
 "autocmd BufWinEnter * silent NERDTreeMirror
 
