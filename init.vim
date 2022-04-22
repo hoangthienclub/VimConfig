@@ -19,14 +19,13 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 
 "{{ Terminal }}
-    Plug 'voldikss/vim-floaterm'
+"   Plug 'voldikss/vim-floaterm'
 
 "{{ Auto completed code }}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'mattn/emmet-vim'
-    Plug 'voldikss/vim-floaterm'
     Plug 'tpope/vim-endwise'          " Autocomplete end after a do
 
 "{{ Code syntax highlight }}
@@ -37,15 +36,23 @@ call plug#begin('/Users/tranthien/.config/nvim/plugged')
     Plug 'pangloss/vim-javascript'
     Plug 'tpope/vim-fugitive'
     Plug 'yuezk/vim-js'
-
+    Plug 'mxw/vim-jsx'
 "{{ Code syntax highlight }}
     Plug 'APZelos/blamer.nvim'
 
 "{{ Code syntax highlight }}
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
+"{{ vim google }}
     Plug 'szw/vim-g'
+
+"{{ Vim git }}
     Plug 'airblade/vim-gitgutter'
+
+"{{ Search all }}
+"    Plug 'dyng/ctrlsf.vim'
+"{{ Golang snipper }}
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -53,7 +60,7 @@ call plug#end()
 set number
 set numberwidth=4
 set ruler
-set mouse=a
+"set mouse=a
 
 " Indentation
 set autoindent
@@ -103,10 +110,11 @@ execute 'source'.nvim_settings_dir.'fzf.vim'
 execute 'source'.nvim_settings_dir.'coc.vim'
 execute 'source'.nvim_settings_dir.'blamer.vim'
 execute 'source'.nvim_settings_dir.'airline.vim'
-execute 'source'.nvim_settings_dir.'floaterm.vim'
+" execute 'source'.nvim_settings_dir.'floaterm.vim'
 execute 'source'.nvim_settings_dir.'vimjavascript.vim'
 execute 'source'.nvim_settings_dir.'typescriptvim.vim'
 execute 'source'.nvim_settings_dir.'git.vim'
+execute 'source'.nvim_settings_dir.'vim-go.vim'
 " Define tab
 function! UseTabs()
   set tabstop=4     " Size of a hard tabstop (ts).
@@ -126,5 +134,4 @@ endfunction
 
 call UseTabs()
 call UseSpaces()
-
 
